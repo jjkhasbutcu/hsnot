@@ -4,64 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Not Alma Uygulaması</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        #note-input {
-            width: 100%;
-            margin-bottom: 10px;
-            padding: 5px;
-            font-size: 16px;
-        }
-        #note-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        .note-item {
-            background-color: #f4f4f4;
-            padding: 10px;
-            margin-bottom: 5px;
-            border-radius: 5px;
-        }
-        .note-item button {
-            float: right;
-            background: none;
-            border: none;
-            color: red;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Not Alma Uygulaması</h1>
-
-    <input type="text" id="note-input" placeholder="Not eklemek için buraya yazın...">
-    <button onclick="addNote()">Not Ekle</button>
-
-    <ul id="note-list"></ul>
-
-    <script>
-        function addNote() {
-            var input = document.getElementById("note-input");
-            var text = input.value;
-            input.value = "";
-
-            if (text.trim() === "") {
-                return;
-            }
-
-            var list = document.getElementById("note-list");
-            var listItem = document.createElement("li");
-            listItem.className = "note-item";
-            listItem.innerHTML = text + '<button onclick="deleteNote(this)">Sil</button>';
-            list.appendChild(listItem);
-        }
-
-        function deleteNote(element) {
-            element.parentNode.remove();
-        }
-    </script>
+    <div class="container">
+        <h1>Not Alma Uygulaması</h1>
+        <input type="text" id="note-input" placeholder="Not eklemek için buraya yazın...">
+        <button onclick="addNote()">Not Ekle</button>
+        <ul id="note-list"></ul>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
